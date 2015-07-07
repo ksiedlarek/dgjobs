@@ -13,7 +13,7 @@ def send_job_mail(subject, message_plain, message_html, recipient):
             send_from,
             [recipient, send_from],
             auth_user=settings.JOBS_EMAIL_USER,
-            auth_password='kluski',
+            auth_password=settings.JOBS_EMAIL_PASSWORD,
             html_message=message_html,
         )
         send_status = 'Email to {0} has been sent.'.format(''.join(recipient))
